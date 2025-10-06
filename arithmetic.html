@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Arithmetic</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { padding: 10px; margin: 5px; width: 100px; }
+        #result { font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+<h1>Arithmetic Application</h1>
+
+<label>First Number:</label>
+<input type="number" id="num1"><br>
+
+<label>Second Number:</label>
+<input type="number" id="num2"><br>
+
+<button id="addBtn">Add</button>
+<button id="subBtn">Subtract</button>
+<button id="divBtn">Divide</button>
+
+<div id="result">0</div>
+
+<script>
+    const num1Field = document.getElementById('num1');
+    const num2Field = document.getElementById('num2');
+    const resultDiv = document.getElementById('result');
+
+    document.getElementById('addBtn').onclick = () => {
+        const num1 = parseFloat(num1Field.value) || 0;
+        const num2 = parseFloat(num2Field.value) || 0;
+        resultDiv.textContent = num1 + num2;
+    };
+
+    document.getElementById('subBtn').onclick = () => {
+        const num1 = parseFloat(num1Field.value) || 0;
+        const num2 = parseFloat(num2Field.value) || 0;
+        resultDiv.textContent = num1 - num2;
+    };
+
+    document.getElementById('divBtn').onclick = () => {
+        const num1 = parseFloat(num1Field.value) || 0;
+        const num2 = parseFloat(num2Field.value) || 0;
+        if (num2 === 0) {
+            resultDiv.textContent = "Cannot divide by zero";
+        } else {
+            resultDiv.textContent = num1 / num2;
+        }
+    };
+</script>
+</body>
+</html>
