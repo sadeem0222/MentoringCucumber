@@ -12,7 +12,7 @@ public class ArithmeticSteps {
 
     @Given("the user opens the arithmetic application")
     public void the_user_opens_the_arithmetic_application() {
-        Driver.getDriver().get("file:///C:/Users/USER/IdeaProjects/MentoringCucumber/arithmetic.html"); // عدّل المسار
+        Driver.getDriver().get("file:///C:/Users/USER/IdeaProjects/MentoringCucumber/arithmetic.html"); // the html file i made
     }
 
     @And("the user enters {int} in the first number field")

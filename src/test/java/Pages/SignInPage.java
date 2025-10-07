@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,6 +8,11 @@ import utilites.Driver;
 import utilites.ReusableMethods;
 
 import static org.junit.Assert.assertEquals;
+import org.openqa.selenium.Alert;
+
+
+
+
 
 public class SignInPage {
 
@@ -46,6 +52,17 @@ public class SignInPage {
         assertEquals("يُرجى ملء هذا الحقل.", ReusableMethods.getValidationMessage(passwordInput));
         return this;
     }
+    public void handleAlertIfPresent() {
+        try {
+            Alert alert = Driver.getDriver().switchTo().alert();
+            System.out.println("Alert text: " + alert.getText());
+            alert.accept(); // إغلاق التنبيه
+        } catch (NoAlertPresentException e) {
+            // لا يوجد alert، تجاهله
+        }
+    }
+
+
 
 
 

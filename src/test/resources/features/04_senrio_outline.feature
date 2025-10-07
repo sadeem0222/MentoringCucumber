@@ -1,0 +1,14 @@
+Feature: Parameterized Feature
+
+  Background: Go to app
+    Given user visits "https://claruswaysda.github.io/deleteChars.html"
+
+  @DeleteChars
+  Scenario Outline: Parameterized Scenario
+    When user enters "<name>" into input
+    Then close browser
+    Examples:
+      |name|
+      |john|
+      |marry|
+      |sadeem|
