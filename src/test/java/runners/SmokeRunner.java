@@ -1,6 +1,8 @@
 package runners;
 
 
+
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -9,7 +11,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@SortStudents",
+        tags = "@smoke",
         dryRun = false,
         plugin = {
                 "html:target/reports/html-reports/cucumber.html",
@@ -18,9 +20,8 @@ import org.junit.runner.RunWith;
                 "pretty",
                 "rerun:target/failedScenarios.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" // For Spark report
-
         }
 
 )
-public class Runner {
+public class SmokeRunner {
 }

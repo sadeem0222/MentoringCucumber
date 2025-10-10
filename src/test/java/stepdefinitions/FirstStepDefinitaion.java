@@ -1,9 +1,8 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
+import io.cucumber.java.en.When;
 
 public class FirstStepDefinitaion {
 
@@ -28,4 +27,14 @@ public class FirstStepDefinitaion {
         System.out.println("Assertion passed! 'Cucumber' is present.");
     }
 
+    @Given("falied")
+    public void falied() {
+        assert false;
+    }
+
+    @Given("flied")
+    public void flied() {
+        assert false;
+
+    }
 }
